@@ -1,0 +1,96 @@
+/*!
+ * Start Bootstrap - Thumbnail Gallery HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+.thumb {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+li a:hover {
+	background-color: #ff7878 !important;
+	color: black !important;
+}
+
+.navbar-default {
+  background-color: #da1313;
+  border-color: #ff7878;
+}
+.navbar-default .navbar-brand {
+  color: #fefefe;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #f3f3f3;
+}
+.navbar-default .navbar-text {
+  color: #fefefe;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fefefe;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #f3f3f3;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #da1313;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #fefefe;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #f3f3f3;
+  background-color: #ff7878;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #da1313;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #f3f3f3;
+  background-color: #ff7878;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #f3f3f3;
+  background-color: #ff7878;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ff7878;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #ff7878;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fefefe;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #fefefe;
+}
+.navbar-default .navbar-link {
+  color: #fefefe;
+}
+.navbar-default .navbar-link:hover {
+  color: #f3f3f3;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #fefefe;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #f3f3f3;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #f3f3f3;
+    background-color: #ff7878;
+  }
+}
