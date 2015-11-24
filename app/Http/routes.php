@@ -16,10 +16,6 @@ Route::get('/title', function () {
 
 // angular***********************
 
-Route::get('/search', function() {
-	return view('search');
-});
-
 Route::get('/results', function () {
 	$name = Input::get('nombre');
 	$users = App\User::where('name', 'LIKE', '%' . $name . '%')->take(20)->get();
@@ -27,14 +23,13 @@ Route::get('/results', function () {
 });
 //****************************
 
-Route::controller('/nuevo', 'NuevoController', [
-    'getIndex' => 'nuevo',
-]);
+Route::controller('/apoyos', 'DatatablesController', ['anyData'  => 'datatables.data', 'getIndex' => 'datatables' ]);
 
-Route::controller('/apoyos', 'DatatablesController', [
-    'anyData'  => 'datatables.data',
-    'getIndex' => 'datatables',
-]);
+Route::get('nuevo', ['as' => 'nuevo', 'uses' => 'NuevoController@getIndex']);
+
+Route::get('apoyos', ['as' => 'apoyos', 'uses' => 'DatatablesController@getIndex']);
+
+Route::get('search', function() {	return view('search'); });
 
 Route::post('register', ['as' => 'register', 'uses' => 'NuevoController@register']);
 

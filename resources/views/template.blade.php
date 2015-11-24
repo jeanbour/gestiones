@@ -16,6 +16,8 @@
 
     <!-- Custom CSS -->
     <link href="{{ asset('assets/style.css') }}" rel="stylesheet">
+
+    @yield('links')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -44,11 +46,15 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Apoyos</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('nuevo') }}">Nuevo</a>
-                    </li>
+                        <a href="{!! route('apoyos') !!}">Apoyos</a>
+                    </li> 
+                     <li>
+                        <a href="{!! route('nuevo') !!}">Nuevo</a>
+                    </li> 
+                     <li>
+                       
+                    </li> 
+                                       
                     <!-- <li>
                         <a href="#">Económicos</a>
                     </li>
@@ -85,6 +91,8 @@
     <!-- /.container -->
 
     <!-- jQuery -->
+
+    @yield('scripts')
 
 </body>
 

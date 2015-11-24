@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use yajra\Datatables\Datatables;
 use App\User;
 use View;
 
