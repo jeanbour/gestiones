@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use yajra\Datatables\Datatables;
-use App\User;
+use App\Personas;
 use View;
+use DB;
 
 class DatatablesController extends Controller
 {
@@ -29,6 +30,13 @@ class DatatablesController extends Controller
 	 */
 	public function anyData()
 	{
-	    return Datatables::of(User::select('*'))->make(true);
+		$tabla = DB::table('personas')
+				->join('domicilios', 'personas.id_domicilio', '=', 'domicilios.id')
+				->join('ordenes', 'personas.id', '=', 'ordenes.id_persona')
+				->join('apoyos_ordenes', 'ordenes.id', '=', 'apoyos_ordenes.id_orden')
+				->join('apoyos', 'apoyos_ordenes.id_apoyo', '=', 'apoyos.id')
+				->join('tipos_apoyos', 'apoyos.id_tipo_apoyo', '=', 'tipos_apoyos.id')
+				->select('*');
+	    return Datatables::of($tabla)->make(true);
 	}
 }

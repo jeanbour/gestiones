@@ -29,10 +29,8 @@ Route::get('nuevo', ['as' => 'nuevo', 'uses' => 'NuevoController@getIndex']);
 
 Route::get('apoyos', ['as' => 'apoyos', 'uses' => 'DatatablesController@getIndex']);
 
-Route::get('search', function() {	return view('search'); });
-
 Route::post('register', ['as' => 'register', 'uses' => 'NuevoController@register']);
 
-
+Route::get('colonias/{id}', ['as' => 'colonias', 'uses' => 'DomiciliosController@colonias']);
 
 
