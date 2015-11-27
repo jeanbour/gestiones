@@ -16,11 +16,22 @@ Route::get('/title', function () {
 
 // angular***********************
 
-Route::get('/results', function () {
+Route::get('search', function() {
+	return View::make('search');
+});
+
+Route::get('search/results', function () {
 	$name = Input::get('nombre');
 	$users = App\User::where('name', 'LIKE', '%' . $name . '%')->take(20)->get();
 	return Response::json($users);
 });
+
+// Route::get('apoyos-ordenes', function () {
+// 	$ide = Input::get('ide');
+// 	$apoyos = App\ApoyosOrdenes::where('id_orden', '=', $ide)->take(20)->get();
+// 	return Response::json($apoyos);
+// });
+Route::get('apoyos-ordenes/{ide}', ['as' => 'datos', 'uses' => 'ApoyosOrdenesController@datos']);
 //****************************
 
 Route::controller('/apoyos', 'DatatablesController', ['anyData'  => 'datatables.data', 'getIndex' => 'datatables' ]);
