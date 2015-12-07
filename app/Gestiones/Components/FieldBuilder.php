@@ -17,7 +17,8 @@ class FieldBuilder
 
 	protected $defaultClass = [
 		'default' 	=> 'form-control',
-		'checkbox' 	=> ''
+		'checkbox' 	=> '',
+		'file'		=> ''
 	];
 
 	public function __construct(Form $form, View $view, Session $session)
@@ -75,6 +76,8 @@ class FieldBuilder
 				return $this->form->password($name, $attributes);
 			case 'checkbox':
 				return $this->form->checkbox($name);
+			case 'file':
+				return $this->form->file($name);
 			default:
 				return $this->form->input($type, $name, $value, $attributes);
 		}
@@ -134,6 +137,11 @@ class FieldBuilder
 	public function select($name, $options = array(), $attributes = array())
 	{
 		return $this->input('select', $name, null, $attributes, $options);
+	}
+
+	public function file($name)
+	{
+		return $this->input('file', $name, null);
 	}
 
 	public function __call($method, $params)

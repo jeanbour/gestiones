@@ -21,5 +21,8 @@ class Personas extends Model implements AuthenticatableContract,
      */
     protected $table = 'personas';
 
+    public $timestamps = false;
+
     // $fillable = array('id', 'id_domicilio', 'nombre', 'apellido_paterno', 'apellido_materno', 'telefono', 'celular', 'foto');
+    protected $fillable = ['id_domicilio', 'nombre', 'apellido_paterno', 'apellido_materno', 'telefono', 'celular', 'foto'];
 }

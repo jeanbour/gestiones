@@ -58,7 +58,7 @@ return [
     "numeric"              => "El campo :attribute debe ser un numero.",
     "regex"                => "El formato del campo :attribute es inválido.",
     "required"             => "El campo :attribute es obligatorio",
-    "required_if"          => "El campo :attribute es obligatorio cuando el campo :other es :value.",
+    "required_if"          => "El campo :attribute es obligatorio cuando el campo :other es :value",
     "required_with"        => "El campo :attribute es obligatorio cuando :values está presente.",
     "required_with_all"    => "El campo :attribute es obligatorio cuando :values está presente.",
     "required_without"     => "El campo :attribute es obligatorio cuando :values no está presente.",
@@ -103,14 +103,19 @@ return [
     */
 
     'attributes' => [
-        'Name'                  => 'Nombre completo',
-        'email'                 => 'Correo',
-        'password'              => 'Clave',
-        'password_confirmation' => 'Repite tu clave',
-        'description'           => 'Descripción',
-        'website'               => 'Sitio web',
-        'job_type'              => 'Tipo de empleo',
-        'category'              => 'Categoría'
+        'nombre' => '*Nombre',
+        'apellido_paterno' => '*Apellido paterno',
+        'apellido_materno' => '*Apellido materno',
+        'telefono' => 'Teléfono',
+        'celular' => '*Celular',
+        'calle' => '*Calle',
+        'numeroI' => '*Número exterior',
+        'numeroE' => 'Número interior',
+        'colonia' => '*Colonia',
+        'seccional' => '*Seccional',
+        'foto' => 'Foto',
+        'apoyo' => '*Apoyo',
+        'monto' => 'Monto'
     ],
 
 ];

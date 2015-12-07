@@ -11,7 +11,7 @@
 <div class="container" ng-app="Gestiones">
 	<div class="row" ng-controller="SearchCtrl">
 		<div class="col-md-6">
-			<h1>Buscar candidatos</h1>
+			<h1>Buscar personas</h1>
 			<div>
 				<h3>Nombre: </h3>
 

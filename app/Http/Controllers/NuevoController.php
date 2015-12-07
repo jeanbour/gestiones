@@ -7,7 +7,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use View;
 use App;
+use App\Apoyos;
 use App\Gestiones\Managers;
+use DB;
+
 
 class NuevoController extends Controller
 {
@@ -18,13 +21,16 @@ class NuevoController extends Controller
 	 */
 	public function getIndex()
 	{
-	    return View::make('apoyos/nuevo');
+
+		$apoyos = Apoyos::lists('apoyo','id');
+		// dd($apoyos);
+	    return View::make('apoyos/nuevo')->with('apoyos', $apoyos);
 	}
 
 	public function Register()
 	{
-		$user = new App\User();
-		$manager = new App\Gestiones\Managers\RegisterManager($user, \Input::all());
+		$personas = new App\Personas();
+		$manager = new App\Gestiones\Managers\RegisterManager($personas, \Input::all());
 		
 	
 		if ($manager->save())
@@ -32,5 +38,15 @@ class NuevoController extends Controller
 			return \Redirect::route('apoyos');
 		}
 
-		return \Redirect::back()->withInput()->withErrors($manager->getErrors());	}
+		return \Redirect::back()->withInput()->withErrors($manager->getErrors());	
+	}
+
+	public function nombres()
+	{
+		$nombres = DB::table('personas')->select('*')->get();
+
+		return \Response::json($nombres);
+	}
 }
+
+	

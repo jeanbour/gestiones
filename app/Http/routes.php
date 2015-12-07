@@ -22,8 +22,8 @@ Route::get('search', function() {
 
 Route::get('search/results', function () {
 	$name = Input::get('nombre');
-	$users = App\User::where('name', 'LIKE', '%' . $name . '%')->take(20)->get();
-	return Response::json($users);
+	$personas = App\Personas::where('nombre', 'LIKE', '%' . $name . '%')->take(20)->get();
+	return Response::json($personas);
 });
 
 // Route::get('apoyos-ordenes', function () {
@@ -31,7 +31,12 @@ Route::get('search/results', function () {
 // 	$apoyos = App\ApoyosOrdenes::where('id_orden', '=', $ide)->take(20)->get();
 // 	return Response::json($apoyos);
 // });
+
+
+// *************OBTENCION DE DATOS**************
 Route::get('apoyos-ordenes/{ide}', ['as' => 'datos', 'uses' => 'ApoyosOrdenesController@datos']);
+
+Route::get('nuevo-rfc-autocomplete', ['as' => 'nombres', 'uses' => 'NuevoController@nombres']);
 //****************************
 
 Route::controller('/apoyos', 'DatatablesController', ['anyData'  => 'datatables.data', 'getIndex' => 'datatables' ]);

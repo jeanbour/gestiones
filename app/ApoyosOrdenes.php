@@ -20,4 +20,11 @@ class ApoyosOrdenes extends Model implements AuthenticatableContract,
      * @var string
      */
     protected $table = 'apoyos_ordenes';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    // protected $fillable = [''];
 }
